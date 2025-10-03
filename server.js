@@ -11,7 +11,8 @@ app.use(express.json());
 
 // Middleware to log request details
 app.use((req, res, next) => {
-  console.log(`Request Method: ${req.method}, Request URL: ${req.url}`);
+  const timestamp = new Date().toISOString();
+  console.log(`[${timestamp}] Request Method: ${req.method}, Request URL: ${req.url}`);
   next();
 });
 
