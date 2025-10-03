@@ -16,7 +16,7 @@ mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTop
   .catch(err => console.log(err));
 
 app.get('/', (req, res) => {
-  res.send('API is running...');
+  res.status(200).send('API is running...');
 });
 
 app.listen(PORT, () => {
