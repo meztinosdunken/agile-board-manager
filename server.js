@@ -16,11 +16,13 @@ mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTop
   .catch(err => console.log(err));
 
 app.get('/', (req, res) => {
+  console.log(`Received request: ${req.method} ${req.url}`);
   res.status(200).send('API is running...');
 });
 
 // Health check endpoint
 app.get('/health', (req, res) => {
+  console.log(`Received request: ${req.method} ${req.url}`);
   res.status(200).json({ status: 'UP' });
 });
 
