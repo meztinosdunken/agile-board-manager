@@ -12,7 +12,7 @@ app.use(express.json());
 const PORT = process.env.PORT || 5000;
 
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log('MongoDB connected...'))
+  .then(() => console.log('MongoDB has been connected...'))
   .catch(err => console.log(err));
 
 app.get('/', (req, res) => {
