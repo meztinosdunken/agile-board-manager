@@ -31,6 +31,10 @@ app.get('/health', (req, res) => {
   res.status(200).json({ status: 'UP' });
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, (err) => {
+  if (err) {
+    console.error(`Error starting server: ${err.message}`);
+    process.exit(1);
+  }
   console.log(`Server is running on port: ${PORT}`);
 });
