@@ -19,6 +19,11 @@ app.get('/', (req, res) => {
   res.status(200).send('API is running...');
 });
 
+// Health check endpoint
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'UP' });
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on port: ${PORT}`);
 });
